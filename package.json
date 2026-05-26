@@ -1,0 +1,24 @@
+{
+  "name": "jsonplaceholder-api-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha \"tests/**/*.test.js\" --timeout 10000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^6.2.2",
+    "dotenv": "^17.4.2",
+    "nock": "^14.0.13",
+    "supertest": "^7.2.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "description": "",
+  "devDependencies": {
+    "mocha": "^11.7.5"
+  }
+}
