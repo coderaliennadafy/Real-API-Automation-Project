@@ -1,0 +1,13 @@
+{
+  "validUser": {
+    "name": "Ali",
+    "username": "alienn",
+    "email": "ali@gmail.com"
+  },
+
+  "invalidUser": {
+    "name": "",
+    "username": "",
+    "email": "abc"
+  }
+}

@@ -1,7 +1,8 @@
 const request = require('supertest');
 const {expect} = require('chai');
 
-const api = request('https://jsonplaceholder.typicode.com');
+const config = require('../../config/config');
+const api = request(config.baseURL);
 
 describe('Users API', () => {
 

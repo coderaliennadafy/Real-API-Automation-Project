@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ajv": "^8.20.0",
     "chai": "^6.2.2",
     "dotenv": "^17.4.2",
     "nock": "^14.0.13",
