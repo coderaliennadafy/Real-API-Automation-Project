@@ -1,6 +1,6 @@
 {
   "validUser": {
-    "name": "Ali",
+    "name": "Ali Ennadafy",
     "username": "alienn",
     "email": "ali@gmail.com"
   },
@@ -9,5 +9,11 @@
     "name": "",
     "username": "",
     "email": "abc"
+  },
+
+  "updatedUser": {
+    "name": "Ali Updated",
+    "username": "alienn",
+    "email": "ali.updated@gmail.com"
   }
 }
