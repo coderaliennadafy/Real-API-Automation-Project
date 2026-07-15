@@ -23,7 +23,7 @@ describe("Posts API Tests", () => {
 
     it("should get a post by id", async () => {
 
-        const response = await reques.get("/posts/1");
+        const response = await request.get("/posts/1");
 
         expect(response.status).to.equal(200);
 
