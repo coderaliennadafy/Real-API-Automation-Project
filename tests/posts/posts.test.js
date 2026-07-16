@@ -35,6 +35,32 @@ describe("Posts API Tests", () => {
 
         expect(response.body).to.have.property("body");
 
+        });
+
+    it("should create a new post", async () => {
+
+        const payload = {
+            title: "QA Automation",
+            body: "Learning Supertest",
+            userId: 1
+        };
+
+        const response = await request
+            .post("/posts")
+            .send(payload);
+
+        expect(response.status).to.equal(201);
+
+        expect(response.body).to.be.an("object");
+
+        expect(response.body).to.have.property("id");
+
+        expect(response.body.title).to.equal(payload.title);
+
+        expect(response.body.body).to.equal(payload.body);
+
+        expect(response.body.userId).to.equal(payload.userId);
+
     });
 
 });
