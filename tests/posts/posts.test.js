@@ -110,4 +110,14 @@ describe("Posts API Tests", () => {
 
     });
 
+    it("should delete a post", async () => {
+
+        const response = await request.delete("/posts/1");
+
+        expect(response.status).to.equal(200);
+
+        expect(response.body).to.be.an("object");
+
+    });
+
 });
