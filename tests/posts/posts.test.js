@@ -110,4 +110,4 @@ describe("Posts API Tests", () => {
 
     });
 
-})
+});
