@@ -45,7 +45,9 @@ describe("Users API Mock tests", () => {
                 ...payload
             });
 
-        const response = await request.post("/users", payload);
+        const response = await request
+            .post("/users")
+            .send(payload);
 
         expect(response.status).to.equal(201);
         expect(response.body).to.be.an("object");
@@ -69,7 +71,9 @@ describe("Users API Mock tests", () => {
                 error: "Internal Server Error"
             });
 
-        const response = await request.post("/users", invalidPayload);
+        const response = await request
+            .post("/users")
+            .send(invalidPayload);
 
         expect(response.status).to.equal(500);
         expect(response.body).to.be.an("object");
