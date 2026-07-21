@@ -52,5 +52,23 @@ describe("Users API Mock tests", () => {
         expect(response.body.name).to.equal("Aliennadafy");
         expect(response.body.username).to.equal("alaoui99");
         expect(response.body.email).to.equal("johndoe@gmail.com");
+        
+   it("should return 500 error mocked server error", async () => {
+        const invalidPayload = {
+            name: "Aliennadafy",
+            username: "alaoui99"
+            // email is missing
+        };
 
-});
+        nock("https://jsonplaceholder.typicode.com")
+            .post("/users", invalidPayload)
+            .reply(500, {
+                error: "Internal Server Error"
+            });
+
+        const response = await request.post("/users", invalidPayload);
+
+        expect(response.status).to.equal(500);
+        expect(response.body).to.be.an("object");
+        expect(response.body.error).to.equal("Internal Server Error");
+    });
