@@ -26,6 +26,7 @@ describe("Users API Mock tests", () => {
         expect(response.body[0].username).to.equal("Bret");
         expect(response.body[0].name).to.equal("Leanne Graham");
         expect(response.body[0].email).to.equal("ennadafy@gmail.com");
+        expect(nock.isDone()).to.be.true; // Ensure that the mock was called
 
     });
 
@@ -52,8 +53,10 @@ describe("Users API Mock tests", () => {
         expect(response.body.name).to.equal("Aliennadafy");
         expect(response.body.username).to.equal("alaoui99");
         expect(response.body.email).to.equal("johndoe@gmail.com");
-        
-   it("should return 500 error mocked server error", async () => {
+        expect(nock.isDone()).to.be.true; // Ensure that the mock was called
+    });
+
+    it("should return 500 error mocked server error", async () => {
         const invalidPayload = {
             name: "Aliennadafy",
             username: "alaoui99"
@@ -71,4 +74,7 @@ describe("Users API Mock tests", () => {
         expect(response.status).to.equal(500);
         expect(response.body).to.be.an("object");
         expect(response.body.error).to.equal("Internal Server Error");
+        
+        expect(nock.isDone()).to.be.true; // Ensure that the mock was called
     });
+});
