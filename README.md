@@ -1,14 +1,14 @@
-# Real API Automation Project
+# # Real API Automation Framework
 
-A REST API automation project built with JavaScript and Node.js to practice API testing using modern automation tools and best practices.
+A REST API automation framework built with JavaScript and Node.js for testing RESTful APIs using modern automation practices.
 
-The project covers functional API testing, schema validation, data-driven testing, mock testing, basic performance testing, containerization with Docker, and continuous integration using GitHub Actions.
+It demonstrates API functional testing, schema validation, data-driven testing, mock testing, performance testing, Docker, Docker Compose, and GitHub Actions.
 
 ---
 
 # Project Overview
 
-This project tests the public JSONPlaceholder REST API and demonstrates how an API automation framework can be organized for maintainability and scalability.
+This project tests the public JSONPlaceholder REST API and demonstrates how an API automation framework can be organized for clean structure, reusable components, and easy maintenance.
 
 The framework includes reusable utilities, separated test data, schema validation, mocked responses, Docker support, and automated test execution through GitHub Actions.
 
@@ -132,6 +132,8 @@ k6 run performance/load-test.js
 
 # Running the Project
 
+
+
 Install dependencies
 
 ```bash
@@ -148,6 +150,24 @@ Run mock tests
 
 ```bash
 npm run test:mocks
+```
+
+Clone the repository
+
+```bash
+git clone https://github.com/coderaliennadafy/Real-API-Automation-Project.git
+```
+
+Move into the project directory
+
+```bash
+cd Real-API-Automation-Project
+```
+
+Install dependencies
+
+```bash
+npm install
 ```
 
 ---
@@ -172,13 +192,31 @@ Run using Docker Compose
 docker compose up
 ```
 
+Build the Docker image
+
+```bash
+docker build -t api-automation .
+```
+
+Run the container
+
+```bash
+docker run --rm api-automation
+```
+
+Run with Docker Compose
+
+```bash
+docker compose up
+```
+
 ---
 
 # Continuous Integration
 
 GitHub Actions automatically runs the test suite on every push to the **master** branch.
 
-The workflow performs the following steps:
+The CI workflow automatically:
 
 - Checkout repository
 - Setup Node.js
@@ -189,14 +227,15 @@ The workflow performs the following steps:
 
 # Current Features
 
-- REST API Testing
+## Current Features
+
+- REST API Functional Testing
 - CRUD Operations
-- Positive Testing
-- Negative Testing
+- Positive & Negative Testing
 - Data-Driven Testing
-- JSON Schema Validation
-- Mock API Testing
-- Basic Performance Testing
+- JSON Schema Validation (AJV)
+- Mock API Testing (Nock)
+- Basic Performance Testing (k6)
 - Docker Support
 - Docker Compose
 - GitHub Actions CI
@@ -209,15 +248,15 @@ The workflow performs the following steps:
 - HTML Test Reports
 - Allure Reporting
 - Advanced Performance Testing
-- Additional API Test Coverage
+- API Authentication Testing
 
 ---
 
-# Author
+## Author
 
 **Ali Ennadafy**
 
-Software QA Tester passionate about software quality, API testing, and test automation.
+Software QA Tester focused on API testing, automation, and software quality.
 
 GitHub:
 https://github.com/coderaliennadafy
