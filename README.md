@@ -23,7 +23,6 @@ The framework includes reusable utilities, separated test data, schema validatio
 - Chai
 - AJV
 - Nock
-- Dotenv
 - Docker
 - Docker Compose
 - GitHub Actions
