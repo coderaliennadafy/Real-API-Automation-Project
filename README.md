@@ -1,48 +1,44 @@
-#  Real API Automation Framework
+# Real API Automation Project
 
-A professional REST API automation framework built with JavaScript, Supertest, Mocha, Chai, and AJV.
+A REST API automation project built with JavaScript and Node.js to practice API testing using modern automation tools and best practices.
 
-The project demonstrates a scalable API testing framework with reusable utilities, schema validation, data-driven testing, negative testing, and basic performance testing using Grafana k6.
-
----
-
-#  Features
-
-- ✅ REST API Functional Testing
-- ✅ Positive Test Scenarios
-- ✅ Negative Test Scenarios
-- ✅ Data-Driven Testing
-- ✅ JSON Schema Validation
-- ✅ Request Helper Utilities
-- ✅ Retry Mechanism
-- ✅ Logging Utilities
-- ✅ Environment Configuration
-- ✅ Basic Performance Testing (k6)
+The project covers functional API testing, schema validation, data-driven testing, mock testing, basic performance testing, containerization with Docker, and continuous integration using GitHub Actions.
 
 ---
 
-#  Tech Stack
+# Project Overview
 
-- JavaScript (ES6)
+This project tests the public JSONPlaceholder REST API and demonstrates how an API automation framework can be organized for maintainability and scalability.
+
+The framework includes reusable utilities, separated test data, schema validation, mocked responses, Docker support, and automated test execution through GitHub Actions.
+
+---
+
+# Technologies
+
+- JavaScript
 - Node.js
 - Supertest
 - Mocha
 - Chai
 - AJV
+- Nock
 - Dotenv
-- k6
+- Docker
+- Docker Compose
+- GitHub Actions
+- Grafana k6
 
 ---
 
-#  Project Structure
+# Project Structure
 
 ```text
 real-api-automation-project
 │
 ├── .github/
 │   └── workflows/
-│       ├── ci.yml
-│       └── cd.yml
+│       └── ci.yml
 │
 ├── config/
 │   └── config.js
@@ -51,30 +47,19 @@ real-api-automation-project
 │   └── users.data.json
 │
 ├── mocks/
-│   └── users.mock.js
+│   └── users.mock.test.js
 │
 ├── performance/
 │   └── load-test.js
-│
-├── reports/
-│   └── mochawesome-report/
 │
 ├── schemas/
 │   └── user.schema.json
 │
 ├── tests/
 │   ├── data-driven/
-│   │   └── users.data.test.js
-│   │
 │   ├── negative/
-│   │   └── negative.test.js
-│   │
 │   ├── posts/
-│   │   └── posts.test.js
-│   │
 │   └── users/
-│       ├── users.schema.test.js
-│       └── users.test.js
 │
 ├── utils/
 │   ├── helpers.js
@@ -83,65 +68,62 @@ real-api-automation-project
 │   ├── retry.js
 │   └── validator.js
 │
-├── .env
-├── .gitignore
+├── Dockerfile
 ├── docker-compose.yml
 ├── package.json
-├── package-lock.json
 └── README.md
 ```
 
 ---
 
-#  Functional Testing
+# Test Coverage
 
-The framework validates REST APIs by testing:
+## Users API
 
-- HTTP Status Codes
-- Response Body
-- Response Headers
-- CRUD Operations
-- Positive Test Cases
-- Negative Test Cases
+- Get all users
+- Get user by ID
+- Create a new user
+- Update a user
+- Delete a user
 
----
+## Posts API
 
-#  Schema Validation
+- Get all posts
+- Get post by ID
+- Create a post
+- Update a post
+- Partially update a post
+- Delete a post
 
-AJV is used to validate API responses against predefined JSON Schemas to ensure contract consistency.
+## Negative Testing
 
----
+- Invalid endpoint
+- Resource not found
+- Mocked server error using Nock
 
-#  Data-Driven Testing
+## Schema Validation
 
-Test data is separated from test logic using external JSON files, making test cases easier to maintain and extend.
+Response validation using JSON Schema with AJV.
 
----
+## Data-Driven Testing
 
-#  Retry Mechanism
+External JSON test data is separated from the test logic to improve maintainability.
 
-Reusable retry utilities help reduce flaky tests by automatically retrying temporary request failures.
+## Mock Testing
 
----
+API responses are mocked using Nock to simulate different server behaviors without calling the real API.
 
-#  Logging
+## Performance Testing
 
-Custom logging utilities provide cleaner debugging and better visibility during test execution.
-
----
-
-#  Performance Testing
-
-Basic API load testing is implemented using Grafana k6.
+A basic load test is implemented using Grafana k6.
 
 Current configuration:
 
-- 5 Virtual Users
-- 10 Seconds Duration
-- Status Code Validation
-- Response Time Monitoring
+- 5 Virtual Users (VUs)
+- 10 seconds duration
+- HTTP status validation
 
-Run Performance Test:
+Run the performance test:
 
 ```bash
 k6 run performance/load-test.js
@@ -149,48 +131,97 @@ k6 run performance/load-test.js
 
 ---
 
-# ▶ Installation
+# Running the Project
+
+Install dependencies
 
 ```bash
 npm install
 ```
 
----
-
-# ▶ Run Functional Tests
+Run all functional tests
 
 ```bash
 npm test
 ```
 
+Run mock tests
+
+```bash
+npm run test:mocks
+```
+
 ---
 
-#  Future Improvements
+# Docker
+
+Build the Docker image
+
+```bash
+docker build -t api-automation .
+```
+
+Run the test suite inside a container
+
+```bash
+docker run --rm api-automation
+```
+
+Run using Docker Compose
+
+```bash
+docker compose up
+```
+
+---
+
+# Continuous Integration
+
+GitHub Actions automatically runs the test suite on every push to the **master** branch.
+
+The workflow performs the following steps:
+
+- Checkout repository
+- Setup Node.js
+- Install project dependencies
+- Execute the complete test suite
+
+---
+
+# Current Features
+
+- REST API Testing
+- CRUD Operations
+- Positive Testing
+- Negative Testing
+- Data-Driven Testing
+- JSON Schema Validation
+- Mock API Testing
+- Basic Performance Testing
+- Docker Support
+- Docker Compose
+- GitHub Actions CI
+
+---
+
+# Future Improvements
 
 - Playwright API Testing
-- GitHub Actions CI/CD
-- Docker Integration
+- HTML Test Reports
 - Allure Reporting
 - Advanced Performance Testing
-- AI-assisted Test Automation
+- Additional API Test Coverage
 
 ---
 
-# 👨‍💻 Author
+# Author
 
-Ali Ennadafy
+**Ali Ennadafy**
 
-Software QA Tester passionate about building reliable and maintainable API automation frameworks.
+Software QA Tester passionate about software quality, API testing, and test automation.
 
-Skills:
+GitHub:
+https://github.com/coderaliennadafy
 
-- Manual Testing
-- API Testing
-- API Automation
-- Performance Testing
-- JavaScript
-- Supertest
-- Mocha
-- Chai
-- AJV
-- k6
+Portfolio:
+https://ali-ennadafy-portfolio.netlify.app/
