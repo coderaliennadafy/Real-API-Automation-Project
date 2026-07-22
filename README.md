@@ -1,14 +1,14 @@
-# # Real API Automation Framework
+# Real API Automation Framework
 
 A REST API automation framework built with JavaScript and Node.js for testing RESTful APIs using modern automation practices.
 
-It demonstrates API functional testing, schema validation, data-driven testing, mock testing, performance testing, Docker, Docker Compose, and GitHub Actions.
+It demonstrates API functional testing, schema validation, data-driven testing, mock testing, basic performance testing, Docker, Docker Compose, and GitHub Actions.
 
 ---
 
 # Project Overview
 
-This project tests the public JSONPlaceholder REST API and demonstrates how an API automation framework can be organized for clean structure, reusable components, and easy maintenance.
+This project tests the public JSONPlaceholder REST API and demonstrates how an API automation framework can be organized with a clean structure, reusable components, and easy maintenance.
 
 The framework includes reusable utilities, separated test data, schema validation, mocked responses, Docker support, and automated test execution through GitHub Actions.
 
@@ -89,7 +89,7 @@ real-api-automation-project
 
 - Get all posts
 - Get post by ID
-- Create a post
+- Create a new post
 - Update a post
 - Partially update a post
 - Delete a post
@@ -102,11 +102,11 @@ real-api-automation-project
 
 ## Schema Validation
 
-Response validation using JSON Schema with AJV.
+API responses are validated against JSON Schemas using AJV to ensure response consistency.
 
 ## Data-Driven Testing
 
-External JSON test data is separated from the test logic to improve maintainability.
+Test data is separated from the test logic using external JSON files, making test cases easier to maintain and extend.
 
 ## Mock Testing
 
@@ -114,7 +114,7 @@ API responses are mocked using Nock to simulate different server behaviors witho
 
 ## Performance Testing
 
-A basic load test is implemented using Grafana k6.
+Basic API load testing is implemented using Grafana k6.
 
 Current configuration:
 
@@ -130,27 +130,25 @@ k6 run performance/load-test.js
 
 ---
 
+# Test Results
+
+Current automated test suite:
+
+```text
+15 Functional Tests Passing
+3 Mock Tests Passing
+```
+
+The project has been successfully tested:
+
+- Locally
+- Inside Docker
+- Using Docker Compose
+- Through GitHub Actions CI
+
+---
+
 # Running the Project
-
-
-
-Install dependencies
-
-```bash
-npm install
-```
-
-Run all functional tests
-
-```bash
-npm test
-```
-
-Run mock tests
-
-```bash
-npm run test:mocks
-```
 
 Clone the repository
 
@@ -168,6 +166,18 @@ Install dependencies
 
 ```bash
 npm install
+```
+
+Run all functional tests
+
+```bash
+npm test
+```
+
+Run mock tests
+
+```bash
+npm run test:mocks
 ```
 
 ---
@@ -192,42 +202,22 @@ Run using Docker Compose
 docker compose up
 ```
 
-Build the Docker image
-
-```bash
-docker build -t api-automation .
-```
-
-Run the container
-
-```bash
-docker run --rm api-automation
-```
-
-Run with Docker Compose
-
-```bash
-docker compose up
-```
-
 ---
 
 # Continuous Integration
 
 GitHub Actions automatically runs the test suite on every push to the **master** branch.
 
-The CI workflow automatically:
+The workflow performs the following steps:
 
 - Checkout repository
 - Setup Node.js
 - Install project dependencies
-- Execute the complete test suite
+- Run the complete test suite
 
 ---
 
 # Current Features
-
-## Current Features
 
 - REST API Functional Testing
 - CRUD Operations
@@ -235,7 +225,7 @@ The CI workflow automatically:
 - Data-Driven Testing
 - JSON Schema Validation (AJV)
 - Mock API Testing (Nock)
-- Basic Performance Testing (k6)
+- Basic Performance Testing (Grafana k6)
 - Docker Support
 - Docker Compose
 - GitHub Actions CI
@@ -252,14 +242,14 @@ The CI workflow automatically:
 
 ---
 
-## Author
+# Author
 
 **Ali Ennadafy**
 
 Software QA Tester focused on API testing, automation, and software quality.
 
-GitHub:
+**GitHub**  
 https://github.com/coderaliennadafy
 
-Portfolio:
+**Portfolio**  
 https://ali-ennadafy-portfolio.netlify.app/
